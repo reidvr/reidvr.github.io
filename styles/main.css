@@ -119,6 +119,7 @@ ul, li{
     justify-content: flex-end;
     width:70%;
     padding:0;
+    max-width: 1060px;
   }
 
   .site-logo{
