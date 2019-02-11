@@ -138,6 +138,11 @@ figure{
   display: block;
 }
 
+.section-content ul li{
+  list-style-type: initial;
+  list-style-position:inside;
+}
+
 .footer-container{
   background:rgb(36, 36, 36);
   flex-shrink: 0;
