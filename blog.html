@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Vinnie's blog</title>
+    <meta name="description" content="My blog">
+    <meta name="keywords" content="blog">
+    <link href="styles/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="page-container">
+        <header class="header-container">
+            <div class="header-content">
+                <a class="site-logo header-item" href="index.html">
+                    <img src="images/VR_Logo.gif" alt="Site logo" />
+                    <h1 class="header-title"> Vinnie Reid</h1>
+                </a>
+
+                <nav class="header-item">
+                    <ul class="header-nav">
+                        <li><a class="header-nav-item highlight" href="blog.html">Blog</a></li>
+                        <li><a class="header-nav-item" href="#">About Me</a></li>
+                        <li><a class="header-nav-item" href="#">Portfolio</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="spacer">
+
+        </div>
+        <main class="main-container">
+
+            <div class="section-container">
+                <section class=" section-content">
+                    <article>
+                        <h2>Margins, Borders and Padding</h2>
+                        <p>These three properties seem to be used a lot in Web Development
+                            and while being super useful by providing space between elements,
+                            can also cause a number of unexpected issues
+                            if not used in the right way as I found out the hard way.
+                            I understood these properties best when viewed graphically:</p>
+                        <figure>
+                            <img src="images/css-box-model.png" alt="CSS-Box-Model" />
+                        </figure>
+                        <p>
+                            Together they make up what's called the "Box-Model".
+                            Each element has a box around it that consists of these properties and
+                            the content itself in the middle as displayed above.
+                        </p>
+
+                        <p><strong>Content</strong> is the actual stuff inside the element like images and text. </p>
+                        <p><strong>Padding</strong> is space added between the content and its border. </p>
+                        <p><strong>Border</strong> is displayed after the padding but is set to 0 by default. </p>
+                        <p><strong>Margin</strong> is the space outside the border. </p>
+
+                        <h2 class="border-break">Issues</h2>
+                        <h4>Box-sizing</h4>
+                        <p>
+                            The biggest issue I had with this model was when it came to the box
+                            dimensions itself. I would set the width of something to fit neatly amongst
+                            other content only to have it bounce around the page unexpectedly.</p>
+                        <p>After a bit of investigation I found out about a property called <strong>box-sizing</strong>.
+                            By default, box-sizing is set to <strong>content-box</strong> and the width and height of
+                            an element is calculated like this:<br>
+                            <br>
+                            width + padding + border = actual width of an element<br>
+                            height + padding + border = actual height of an element<br>
+                            <br>
+                            Meaning when you set the width of an element, the element often appears bigger than you
+                            have set (because the element's border and padding are added to the element's specified
+                            width/height).
+
+                        </p>
+                        <p>To fix this and avoid having to compute the "actual" width/height of an element, we can set
+                            <strong>box-sizing:border-box.</strong>
+                            This allows us to include the padding and border in an element's total width and height.
+                            I personally set every element to border-box using the * selector for "all" so that I never
+                            have to worry about this issue again.</p>
+                        <figure>
+                            <img src="images/border-box-all.png" alt="CSS-Box-Model" />
+                        </figure>
+
+                    </article>
+                </section>
+
+            </div>
+
+        </main>
+        <footer class="footer-container">
+            <div class="footer-content">
+                <nav>
+                    <ul class="footer-nav">
+                        <li><a href="#" class="footer-nav-item">Back to top</a></li>
+                        <li><a href="#" class="footer-nav-item">Get in touch</a></li>
+                        <li><a href="#" class="footer-nav-item">Facebook</a></li>
+                        <li><a href="#" class="footer-nav-item">Twitter</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
