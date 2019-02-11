@@ -6,6 +6,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
+
   /* border: 2px solid rgb(226, 1, 1);
   border-style: dashed; */
 }
@@ -31,6 +33,13 @@ ul, li{
     padding: 0;
     list-style-type: none;
 }
+
+figure{
+  margin: 0;
+  padding: 0;
+}
+
+
 
 /* ================================= 
   Base Layout Styles
@@ -93,6 +102,11 @@ ul, li{
   display: block;
 }
 
+.highlight{
+  color: #0b0b0b;
+  border-bottom: solid 1px #ffa954;
+}
+
 
 .header-nav-item:hover{
   color: #0b0b0b;
@@ -111,6 +125,17 @@ ul, li{
   margin: auto;
   padding: 5px;
   width:90%;
+}
+
+.border-break{
+  padding-top:20px;
+  border-top:solid 2px #ffa954;
+}
+
+.section-content img{
+  max-width:100%;
+  margin: auto;
+  display: block;
 }
 
 .footer-container{
@@ -177,7 +202,9 @@ ul, li{
     border-bottom-color:transparent;
   }
 
- 
+  .highlight{
+    border-bottom-color:  #ffa954;
+  }
 
   .spacer{
     width: 100%;
@@ -192,6 +219,12 @@ ul, li{
     width:70%;
     max-width: 1060px;
   }
+
+  .section-content{
+  list-style-type: inherit;
+  }
+
+
  
   .footer-content{
     width:70%;
