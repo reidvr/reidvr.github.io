@@ -225,7 +225,8 @@ figure {
 ==================================== */
   .dice-game-container {
     display: block;
-    background: rgb(70, 69, 69);
+    
+    background:rgb(78, 78, 78);
     width: 100%;
     position: relative;
   }
@@ -249,6 +250,21 @@ figure {
     flex-grow: 1;
     align-items: center;
   }
+
+  .active-player{
+    
+    background: rgb(70, 69, 69);
+  }
+  .active-player .player-name::after{
+    
+    content: "\2022";
+    font-size: 47px;
+    position: absolute;
+    color: #ffa954;;
+    padding-left: 8px;
+    
+  }
+
 
   .player-name {
     font-size: 3em;
