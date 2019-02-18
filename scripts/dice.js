@@ -11,6 +11,7 @@ function Player(name) {
 var diceValue = 0;
 var activePlayer = 0;
 var players = [];
+var prevDice = 0;
 
 newGame();
 
@@ -24,6 +25,7 @@ document.querySelector('.btn-hold').addEventListener('click', holdRound);
 function newGame(){
     diceValue = 0;
     activePlayer = 0;
+    prevDice = 0;
     players = [new Player("Player1"), new Player("Player2")];
     var diceDOM = document.querySelector(".dice");
     diceDOM.style.display = 'none';
@@ -56,10 +58,23 @@ function rollDice(){
     
     diceValue = Math.floor(Math.random() * 6) + 1;//roll dice
 
+
     if(diceValue !== 1)
     {
-        players[activePlayer].roundScore += diceValue;//add roll players to round score
-        updateHTML();
+        if(diceValue === 6 && prevDice === 6){
+            players[activePlayer].roundScore = 0;
+            players[activePlayer].gameScore = 0;
+            prevDice = 0;//reset prev dice for new player
+            updateHTML();
+            changePlayer();
+        }
+        else{
+            prevDice = diceValue;
+            players[activePlayer].roundScore += diceValue;//add roll players to round score
+            updateHTML();
+            
+        }
+
     }
     else
     {
@@ -84,10 +99,10 @@ function changePlayer(){
             
 
             //remove active class from current player
-            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active-player');
+            document.querySelector('.player-' + activePlayer + '-panel').classList.toggle('active-player');
             activePlayer = (activePlayer === 1) ? 0:1;//change player
             //add active class to new player
-            document.querySelector('.player-' + activePlayer + '-panel').classList.add('active-player');
+            document.querySelector('.player-' + activePlayer + '-panel').classList.toggle('active-player');
 
 }
 
