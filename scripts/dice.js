@@ -74,7 +74,6 @@ function rollDice(){
             updateHTML();
             
         }
-
     }
     else
     {

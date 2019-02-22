@@ -135,6 +135,13 @@ figure {
 .section-content ul li {
   list-style-type: initial;
   list-style-position: inside;
+
+}
+
+.section-content ol li {
+  list-style: decimal inside none;
+  text-indent: -2.2em;
+
 }
 
 .footer-container {
@@ -292,6 +299,7 @@ figure {
   }
 
   .active {
+    
   }
 
   .dice-btn {
@@ -319,7 +327,7 @@ figure {
     margin-right: 20px;
   }
 
-  button i, form i {
+  button i {
     
     display: inline-block;
     margin-right: 15px;
